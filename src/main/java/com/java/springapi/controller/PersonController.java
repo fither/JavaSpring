@@ -1,5 +1,6 @@
 package com.java.springapi.controller;
 
+import com.java.springapi.model.PersonCreateModel;
 import com.java.springapi.model.PersonModel;
 import com.java.springapi.service.PersonService;
 import lombok.AllArgsConstructor;
@@ -27,7 +28,7 @@ public class PersonController {
     }
 
     @PostMapping()
-    public ResponseEntity<PersonModel> create(@RequestBody PersonModel person) {
+    public ResponseEntity<PersonModel> create(@RequestBody PersonCreateModel person) {
         return new ResponseEntity<>(_personService.createPerson(person), HttpStatus.CREATED);
     }
 
